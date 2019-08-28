@@ -1,8 +1,8 @@
 [![NPM Publish Version][5]][6]
 
-# Liferay Fragments CLI
+# Liferay Fragment Toolkit
 
-This is a CLI for developing fragments for Liferay DXP. It allows
+This is a toolkit for developing fragments for Liferay DXP. It allows
 
 - generating fragments from scratch
 - exporting them from a Liferay instance
@@ -16,23 +16,15 @@ them in your browser immediately.
 
 - [NodeJS][3] 8+
 - [NPM][2] 6+
-- [Yeoman][1] 2+
 
 ## Installation
-
-First, install *Yeoman* and *generator-liferay-fragments* using *npm*
-(we assume you have pre-installed *node.js*).
-
-```bash
-npm install -g yo
-npm install -g generator-liferay-fragments
-```
 
 The first step is always to generate a new project. You must do this even if you
 will be exporting the fragments from a Liferay instance:
 
 ```bash
-yo liferay-fragments
+npm i -g liferay-fragment-toolkit
+lft new my-new-fragments-project
 ```
 
 This command will guide you through a project creation and will ask you some
@@ -53,7 +45,7 @@ Liferay instance, and manage your existing fragments.
 Fragments are always grouped inside collections. To create a collection, run
 
 ```bash
-npm run add-collection
+lft add-collection
 ```
 
 You can create as many collections as desired.
@@ -62,7 +54,7 @@ Once a collection has been created, you can add as many fragments as desired
 inside by running
 
 ```bash
-npm run add-fragment
+lft add-fragment
 ```
 
 ### Fragments Directory Structure
@@ -101,7 +93,7 @@ command. It will guide you through the information that you need to connect to
 Liferay and choose among its sites:
 
 ```bash
-npm run export
+lft export
 ```
 
 ### Importing fragments into a Liferay instance
@@ -110,7 +102,7 @@ After you've created your own fragments or after you've made modifications to
 exported fragments, you can import them into a Liferay instance by running:
 
 ```bash
-npm run import
+lft import
 ```
 
 You can also ask the Fragments CLI to watch for further changes and import them
@@ -119,7 +111,7 @@ with your preferred editor and the browser to check the changes automatically
 imported into Liferay.
 
 ```bash
-npm run import:watch
+lft import --watch
 ```
 
 ### Previewing fragments with a Liferay Server
@@ -133,7 +125,7 @@ your fragments rendered without importing them. Moreover, this command also
 autoreloads features, so you can make changes in your fragments rapidly.
 
 ```bash
-npm run preview
+lft preview
 ```
 
 ### Packaging fragments for distribution
@@ -143,13 +135,11 @@ a ZIP file, which can be imported inside any Liferay site. To prepare the ZIP
 file, run
 
 ```bash
-npm run compress
+lft compress
 ```
 
-[1]: https://yeoman.io
 [2]: https://www.npmjs.com
 [3]: https://nodejs.org
-[4]: https://github.com/lerna
-[5]: https://badge.fury.io/js/generator-liferay-fragments.svg?style=flat
-[6]: https://www.npmjs.com/package/generator-liferay-fragments
+[5]: https://badge.fury.io/js/liferay-fragment-toolkit.svg?style=flat
+[6]: https://www.npmjs.com/package/liferay-fragment-toolkit
 [7]: https://web.liferay.com/marketplace/-/mp/application/109571986
